@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/icons/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Sorting Algorithm Visualizer</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div class="header__text">
+        <h1>Quick & Selection Sorting Visualizer</h1>
+    </div>
+
+
+    <section>
+
+        <div id="Info_Cont1">
+            <div class="sort">
+                <h1>Selection Sort</h1>
+                <p>Time complexity : 0(n2)</p>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#selectionsort">
+                    Read more
+                </button>
+
+            </div>
+        </div>
+
+        <div id="array_container">
+
+        </div>
+
+        <div id="Info_Cont2">
+            <div class="sort">
+                <h1>Quick Sort</h1>
+                <p>Time complexity : 0(n2)</p>
+
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#quicksort">
+                    Read more
+                </button>
+
+            </div>
+        </div>
+
+    </section>
+    <header>
+        <nav>
+            <div class="array-inputs">
+                <p>Size of the array:</p>
+                <input id="a_size" type="range" min=20 max=150 step=1 value=80>
+                <p>Speed of the algorithm:</p>
+                <input id="a_speed" type="range" min=1 max=5 step=1 value=4>
+                <button class="btn btn-success" id="a_generate">Generate Random Array</button>
+
+                <!-- <button class="btn btn-danger" id="reset"><a href="#"></a>Stop</button> -->
+            </div>
+
+            <div class="header_right">
+                <p class="nav-heading"></p>
+
+                <div class="algos">
+                    <button>Selection</button>
+                    <button>Quick</button>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <div class="modal fade" id="selectionsort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Selection Sorting algorithm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    In computer science, selection sort is an in-place comparison sorting algorithm. It has an O(n2)
+                    time complexity, which makes it inefficient on large lists, and generally performs worse than the
+                    similar insertion sort. Selection sort is noted for its simplicity and has performance advantages
+                    over more complicated algorithms in certain situations, particularly where auxiliary memory is
+                    limited.
+
+                    The algorithm divides the input list into two parts: a sorted sublist of items which is built up
+                    from left to right at the front (left) of the list and a sublist of the remaining unsorted items
+                    that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist is
+                    the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on
+                    sorting order) element in the unsorted sublist, exchanging (swapping) it with the leftmost unsorted
+                    element (putting it in sorted order), and moving the sublist boundaries one element to the right.
+
+                    The time efficiency of selection sort is quadratic, so there are a number of sorting techniques
+                    which have better time complexity than selection sort. One thing which distinguishes selection sort
+                    from other sorting algorithms is that it makes the minimum possible number of swaps, n − 1 in the
+                    worst case. <a href="https://en.wikipedia.org/wiki/Selection_sort">(Source: Wikipedia)</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="quicksort" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Quick Sorting algorithm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Quicksort (sometimes called partition-exchange sort) is an efficient sorting algorithm. Developed by
+                    British computer scientist Tony Hoare in 1959[1] and published in 1961,[2] it is still a commonly
+                    used algorithm for sorting. When implemented well, it can be about two or three times faster than
+                    its main competitors, merge sort and heapsort.[3][contradictory]
+
+                    Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array
+                    and partitioning the other elements into two sub-arrays, according to whether they are less than or
+                    greater than the pivot. The sub-arrays are then sorted recursively. This can be done in-place,
+                    requiring small additional amounts of memory to perform the sorting.
+
+                    Quicksort is a comparison sort, meaning that it can sort items of any type for which a "less-than"
+                    relation (formally, a total order) is defined. Efficient implementations of Quicksort are not a
+                    stable sort, meaning that the relative order of equal sort items is not preserved.
+
+                    Mathematical analysis of quicksort shows that, on average, the algorithm takes O(n log n)
+                    comparisons to sort n items. In the worst case, it makes O(n2) comparisons, though this behavior is
+                    rare.
+                    Algorithm
+                    Full example of quicksort on a random set of numbers. The shaded element is the pivot. It is always
+                    chosen as the last element of the partition. However, always choosing the last element in the
+                    partition as the pivot in this way results in poor performance (O(n²)) on already sorted arrays, or
+                    arrays of identical elements. Since sub-arrays of sorted / identical elements crop up a lot towards
+                    the end of a sorting procedure on a large set, versions of the quicksort algorithm that choose the
+                    pivot as the middle element run much more quickly than the algorithm described in this diagram on
+                    large sets of numbers.
+
+                    Quicksort is a divide and conquer algorithm. It first divides the input array into two smaller
+                    sub-arrays: the low elements and the high elements. It then recursively sorts the sub-arrays. The
+                    steps for in-place Quicksort are:
+
+                    Pick an element, called a pivot, from the array.
+                    Partitioning: reorder the array so that all elements with values less than the pivot come before the
+                    pivot, while all elements with values greater than the pivot come after it (equal values can go
+                    either way). After this partitioning, the pivot is in its final position. This is called the
+                    partition operation.
+                    Recursively apply the above steps to the sub-array of elements with smaller values and separately to
+                    the sub-array of elements with greater values.
+
+                    The base case of the recursion is arrays of size zero or one, which are in order by definition, so
+                    they never need to be sorted.
+
+                    The pivot selection and partitioning steps can be done in several different ways; the choice of
+                    specific implementation schemes greatly affects the algorithm's performance. <a
+                        href="https://en.wikipedia.org/wiki/Quick_sort">(Source: Wikipedia)</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/visualizations.js"></script>
+
+    <script src="./scripts/selection_sort.js"></script>
+    <script src="./scripts/quick_sort.js"></script>
+</body>
+
+</html>
